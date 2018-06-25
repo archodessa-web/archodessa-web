@@ -3,6 +3,9 @@ language: php
 php:
   - 7.1.11
 
+services:
+  - postgresql
+
 before_script:
   - composer self-update
   - composer install --no-interaction
