@@ -6,6 +6,9 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateStatusesTable extends Migration
 {
+
+    public $table = 'statuses';
+
     /**
      * Run the migrations.
      *
@@ -13,7 +16,7 @@ class CreateStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ class CreateStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists($this->table);
     }
 }

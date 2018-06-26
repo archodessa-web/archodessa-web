@@ -6,6 +6,9 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDatesTable extends Migration
 {
+
+    public $table = 'dates';
+
     /**
      * Run the migrations.
      *
@@ -13,7 +16,7 @@ class CreateDatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dates', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ class CreateDatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dates');
+        Schema::dropIfExists($this->table);
     }
 }

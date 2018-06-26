@@ -6,6 +6,9 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDesignationsTable extends Migration
 {
+
+    public $table = 'designations';
+
     /**
      * Run the migrations.
      *
@@ -13,7 +16,7 @@ class CreateDesignationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('designations', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ class CreateDesignationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('designations');
+        Schema::dropIfExists($this->table);
     }
 }
